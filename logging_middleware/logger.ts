@@ -16,7 +16,7 @@ const COLORS = {
   TIMESTAMP: '\x1b[32m',
 };
 
-const token = "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJNYXBDbGFpbXMiOnsiYXVkIjoiaHR0cDovLzIwLjI0NC41Ni4xNDQvZXZhbHVhdGlvbi1zZXJ2aWNlIiwiZW1haWwiOiIyM2JxMWE0NzM1QHZ2aXQubmV0IiwiZXhwIjoxNzgwNjMzNjI4LCJpYXQiOjE3ODA2MzI3MjgsImlzcyI6IkFmZm9yZCBNZWRpY2FsIFRlY2hub2xvZ2llcyBQcml2YXRlIExpbWl0ZWQiLCJqdGkiOiJmZGJmMWRjMi05MGJjLTQ1ZDQtYjUzOC00N2U2YjQzMDc0OGUiLCJsb2NhbGUiOiJlbi1JTiIsIm5hbWUiOiJwcmVtbmFyZW4iLCJzdWIiOiJmOTVmNGYwOC1kNGExLTQ5ODMtYjk0NS01ODI2Zjc3NmNlZjUifSwiZW1haWwiOiIyM2JxMWE0NzM1QHZ2aXQubmV0IiwibmFtZSI6InByZW1uYXJlbiIsInJvbGxObyI6IjIzYnExYTQ3MzUiLCJhY2Nlc3NDb2RlIjoiUVFkRVl5IiwiY2xpZW50SUQiOiJmOTVmNGYwOC1kNGExLTQ5ODMtYjk0NS01ODI2Zjc3NmNlZjUiLCJjbGllbnRTZWNyZXQiOiJxR1JXVERWQ2V3aHhoRFRQIn0.tM2gh59IuL4mj8o_-o0V9Fms9k5lsrCpk35W6rKIXKE";
+export const token = "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJNYXBDbGFpbXMiOnsiYXVkIjoiaHR0cDovLzIwLjI0NC41Ni4xNDQvZXZhbHVhdGlvbi1zZXJ2aWNlIiwiZW1haWwiOiIyM2JxMWE0NzM1QHZ2aXQubmV0IiwiZXhwIjoxNzgwNjM4ODM5LCJpYXQiOjE3ODA2Mzc5MzksImlzcyI6IkFmZm9yZCBNZWRpY2FsIFRlY2hub2xvZ2llcyBQcml2YXRlIExpbWl0ZWQiLCJqdGkiOiJkMmE3Mzg2ZS0wYzRmLTRiMzMtODFkYy1mNmZhNmJiNjk4ZDEiLCJsb2NhbGUiOiJlbi1JTiIsIm5hbWUiOiJwcmVtbmFyZW4iLCJzdWIiOiJmOTVmNGYwOC1kNGExLTQ5ODMtYjk0NS01ODI2Zjc3NmNlZjUifSwiZW1haWwiOiIyM2JxMWE0NzM1QHZ2aXQubmV0IiwibmFtZSI6InByZW1uYXJlbiIsInJvbGxObyI6IjIzYnExYTQ3MzUiLCJhY2Nlc3NDb2RlIjoiUVFkRVl5IiwiY2xpZW50SUQiOiJmOTVmNGYwOC1kNGExLTQ5ODMtYjk0NS01ODI2Zjc3NmNlZjUiLCJjbGllbnRTZWNyZXQiOiJxR1JXVERWQ2V3aHhoRFRRIn0.gzubesToKYs7s3IfPgQAF0PviInK6Amb5hGYlcrBxSQ";
 
 function isBrowser(): boolean {
   return typeof window !== 'undefined' && typeof window.document !== 'undefined';
@@ -75,7 +75,7 @@ export async function Log(stack: string, level: string, packageField: string, me
       body: JSON.stringify({
         stack: stack.toLowerCase(),
         level: level.toLowerCase(),
-        package: packageField.toLowerCase(),
+        packageField: packageField.toLowerCase(),
         message: message
       })
     });

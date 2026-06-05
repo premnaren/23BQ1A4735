@@ -17,7 +17,7 @@ import {
   CircularProgress,
   List
 } from '@mui/material'
-import { Log } from '../../logging_middleware/logger'
+import { Log, token } from '../../logging_middleware/logger'
 import { getTopPriorityNotifications } from './utils/prioritySort'
 import type { RawNotification } from './utils/prioritySort'
 
@@ -37,7 +37,13 @@ function App() {
   const fetchNotifications = async () => {
     setLoading(true)
     try {
-      const response = await fetch("/api-gateway/evaluation-service/notifications")
+      const response = await fetch("/api-gateway/evaluation-service/notifications", {
+        method: "GET",
+        headers: {
+          "Authorization": `Bearer ${token}`,
+          "Content-Type": "application/json"
+        }
+      })
       const data = await response.json()
       const rawList: RawNotification[] = data.notifications || []
       
