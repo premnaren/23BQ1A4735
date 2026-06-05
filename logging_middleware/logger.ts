@@ -66,7 +66,7 @@ export async function Log(stack: string, level: string, packageField: string, me
   formatConsole(level.toUpperCase() as LogLevel, `[${packageField}] ${message}`);
 
   try {
-    const response = await fetch("http://4.224.186.213/evaluation-service/logs", {
+    const response = await fetch("/api-gateway/evaluation-service/logs", {
       method: "POST",
       headers: {
         "Authorization": `Bearer ${token}`,

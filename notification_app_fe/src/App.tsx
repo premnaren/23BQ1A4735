@@ -37,7 +37,7 @@ function App() {
   const fetchNotifications = async () => {
     setLoading(true)
     try {
-      const response = await fetch("http://4.224.186.213/evaluation-service/notifications")
+      const response = await fetch("/api-gateway/evaluation-service/notifications")
       const data = await response.json()
       const rawList: RawNotification[] = data.notifications || []
       
